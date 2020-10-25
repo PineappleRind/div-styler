@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div styler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="adjust-container">
+        <div>
+        <h1>Basic</h1>
+        <p>Height</p>
+        <input type="range" id="height"><br>
+        <p>Width</p>
+        <input type="range" id="width"><br>
+        <p>Rotate</p>
+        <input type="range" value="0" id="rotate">
+        <p>Color</p>
+        <input type="color" value="#ff7f50" id="color"><br>
+        <p>Roundness</p>
+        <input type="range" id="borderRadius">
+        <br><br><hr>
+        <h1>Border</h1>
+        <p>Color</p>
+        <input type="color" id="borderColor"><br>
+        <p>Thickness</p>
+        <input type="range" value="10" id="borderThickness">
+        <p>Style</p>
+        <input type="radio" id="borderSolid" name="borderStyle">
+        <label for="borderSolid">Solid</label><br>
+        <input type="radio" id="borderDashed" name="borderStyle">
+        <label for="borderDashed">Dashed</label><br>
+        <input type="radio" id="borderDotted" name="borderStyle">
+        <label for="borderDotted">Dotted</label><br>
+        <input type="radio" id="borderDouble" name="borderStyle">
+        <label for="borderDouble">Double</label><br>
+        <br><br><hr>
+        <h1>Content</h1>
+        <textarea maxlength="29" id="divContent" onkeyup="updateContent();" onkeydown="updateContent();" onkeypress="updateContent();""></textarea>
+        <p>Font size</p>
+        <input type="range" id="fontSize">
+        <p>Font color</p>
+        <input type="color" id="fontColor">
+        <p>Font family <a style="cursor:pointer; text-decoration: underline; color:blue;" onclick="showModal()" class="help">(See all compatible fonts)</a></p>
+        <textarea limit="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
+        <p id="fontFamilyCustomError" style="font-weight:500; font-size:10px; margin:0; color:red; display:none;">Error: Font not found</p>
+        <p>Font attributes</p>
+        <input type="radio" name="fontAttributes" id="fontBold">Bold<br>
+        <input type="radio" name="fontAttributes" id="fontItalic">Italic<br>
+        <input type="radio" name="fontAttributes" id="fontUnderline">Underline<br>
+        <br><br><br>
+    </div>
+    </div>
+    <div id="div" style="font-family: Arial, Helvetica, sans-serif;"></div>
+    <div class="code">
+        <pre>
+        height: <span id="heightCode">100px</span>;
+        width: <span id="widthCode">100px</span>;
+        background-color: <span id="bgColorCode">#ff7f50</span>;
+        border: <span id="borderThicknessCode">2px</span> <span id="borderStyleCode">solid</span> <span id="borderColorCode">#000</span>;
+        border-radius: <span id="borderRadiusCode">100px</span>;
+        font-size: <span id="fontSizeCode">25px</span>; 
+        transform: rotateZ(<span id="rotateCode">0deg</span>); 
+        font-family: <span id="fontFamilyCode">Times New Roman</span>;</pre>
+    </div>
+
+    <div id="overlay" onclick="hideModal()">
+        <ul>
+            <li class="list-item tnr">Times New Roman</li>
+            <li class="list-item hlv">Helvetica</li>
+            <li class="list-item cms">Comic Sans MS</li>
+            <li class="list-item nts">Noto Sans JP</li>
+            <li class="list-item grg">Georgia</li>
+            <li class="list-item zpf">Zapfino</li>
+            <li class="list-item vrd">Verdana</li>
+            <li class="list-item crr">Courier</li>
+        </ul>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
