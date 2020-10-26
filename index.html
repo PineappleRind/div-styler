@@ -48,7 +48,8 @@
         <textarea limit="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
         <p id="fontFamilyCustomError" style="font-weight:500; font-size:10px; margin:0; color:red; display:none;">Error: Font not found</p>
         <p>Font attributes</p>
-        <input type="radio" name="fontAttributes" id="fontBold">Bold<br>
+        <input type="radio" name="fontAttributes" id="fontBold">
+        <label for="fontBold">Bold</label><br>
         <input type="radio" name="fontAttributes" id="fontItalic">Italic<br>
         <input type="radio" name="fontAttributes" id="fontUnderline">Underline<br>
         <br><br><br>
@@ -64,7 +65,7 @@
         border-radius: <span id="borderRadiusCode">100px</span>;
         font-size: <span id="fontSizeCode">25px</span>; 
         transform: rotateZ(<span id="rotateCode">0deg</span>); 
-        font-family: <span id="fontFamilyCode">Times New Roman</span>;</pre>
+        font-family: <span id="fontFamilyCode">Helvetica, sans-serif</span>;</pre>
     </div>
 
     <div id="overlay" onclick="hideModal()">
@@ -81,7 +82,7 @@
     </div>
 
     <div class="foot">
-        <p>made by PineappleRind</p>
+        <p>made by <a href="https://github.com/pineapplerind" style="display:inline;">PineappleRind</a></p>
     </div>
     <script src="main.js">
     </script>

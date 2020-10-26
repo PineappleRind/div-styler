@@ -121,10 +121,10 @@
 
 
         #div {
-            height:100px;
-            width:100px;
+            height:250px;
+            width:250px;
             background-color:#ff7f50;
-            border:solid black;
+            border:3px solid #0f0f0f;
             text-align:center;
             word-wrap: break-word;
             display:flex;
@@ -133,6 +133,7 @@
             justify-content: center;
             overflow:hidden;
             font-family: Helvetica, sans-serif;
+            border-radius:100px;
         }
 
         #overlay {

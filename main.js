@@ -26,7 +26,7 @@
             div.style.borderWidth = divBorderThickness.value/4 + "px";
             div.style.backgroundColor = divBgColor.value;
             div.style.borderColor = divBorderColor.value;
-            div.style.transform = 'rotateZ(' + divRotate.value * 0.9 + "deg)"
+            div.style.transform = 'rotateZ(' + Math.ceil(divRotate.value * 3.6) + "deg";
 
             if (divBorderRadius.value === 100) {
                 div.style.borderRadius = '50%';
@@ -95,7 +95,7 @@
             borderRadius.innerHTML = divBorderRadius.value * 2 + "px";
             borderThickness.innerHTML = Math.ceil(divBorderThickness.value/4) + "px";
             fontSize.innerHTML = Math.floor(divFontSize.value/1.1) + 'px';
-            rotate.innerHTML = Math.ceil(divRotate.value * 0.9) + "deg";
+            rotate.innerHTML = Math.ceil(divRotate.value * 3.6) + "deg";
             fontFamily.innerHTML = div.style.fontFamily;
 
 
@@ -123,9 +123,8 @@
                 div.style.fontStyle = 'italic';
             } else if (divFontUnderline.checked === true) {
                 div.style.textDecoration = 'underline';
-            } else if (divFontBold.checked === true && divFontItalic.checked === true) {
-                div.style.fontWeight = '900';
-                div.style.fontStyle = 'italic';
+            } else if (divFontBold.checked === false) {
+                div.style.fontWeight = '400';
             } else {
                 div.style.fontWeight = '400';
                 div.style.fontStyle = 'normal';
@@ -142,4 +141,4 @@
 
         setInterval(function(){
             divFunction();
-        },10);
+        },1000);
