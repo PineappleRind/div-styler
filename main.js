@@ -132,12 +132,21 @@
             }
         }
 
+        function reset() {
+            window.location.href = "https://div-styler.netlify.app";
+        }
+
         function updateContent() {
             let div = document.getElementById("div");
             let input = document.getElementById("divContent");
 
             div.textContent = input.value;
         }
+
+        let resetBtn = document.getElementById("resetButton");
+        resetBtn.addEventListener("click", function(){
+            reset();
+        })
 
         setInterval(function(){
             divFunction();
