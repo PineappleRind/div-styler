@@ -141,4 +141,4 @@
 
         setInterval(function(){
             divFunction();
-        },1000);
+        },10);
