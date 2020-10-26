@@ -97,6 +97,19 @@
             padding-left:0;
             cursor:text;
     } 
+
+    .foot {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foot p {
+        position:fixed;
+        z-index:10;
+        bottom:0;
+        color:rgb(59, 59, 59);
+    }
     pre, span {
         font-family: Courier, monospace;
         cursor:text;
