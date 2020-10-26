@@ -34,7 +34,6 @@
                 div.style.borderRadius = divBorderRadius.value * 2 + "px";
             }
 
-            let divBorderSolid = document.getElementById('borderSolid');
             let divBorderDashed = document.getElementById('borderDashed');
             let divBorderDotted = document.getElementById('borderDotted');
             let divBorderDouble = document.getElementById('borderDouble');
@@ -132,6 +131,31 @@
             }
         }
 
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          }
+
+        function random() {
+            let divHeight = document.getElementById("height");
+            let divWidth = document.getElementById("width");
+            let divBorderRadius = document.getElementById("borderRadius");
+            let divBgColor = document.getElementById("color");
+            let divBorderThickness = document.getElementById("borderThickness");
+            let divBorderColor = document.getElementById("borderColor");
+
+            divHeight.value = Math.floor(Math.random() * 101);
+            divWidth.value = Math.floor(Math.random() * 101);
+            divBorderRadius.value = Math.floor(Math.random() * 101);
+            divBgColor.value = getRandomColor();
+            divBorderThickness.value = Math.floor(Math.random() * 101);
+            divBorderColor.value = getRandomColor();
+        }
+
         function reset() {
             window.location.href = "https://div-styler.netlify.app";
         }
@@ -146,7 +170,12 @@
         let resetBtn = document.getElementById("resetButton");
         resetBtn.addEventListener("click", function(){
             reset();
-        })
+        });
+
+        let randomBtn = document.getElementById("random");
+        randomBtn.addEventListener("click", function(){
+            random();
+        });
 
         setInterval(function(){
             divFunction();
