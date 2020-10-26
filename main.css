@@ -41,7 +41,6 @@
 
           input[type="range"]:hover {
             opacity: 1;
-            height: 17px;
             border-radius:0px;
           }
 
