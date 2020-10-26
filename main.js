@@ -107,10 +107,7 @@
             } else if (divBorderDouble.checked === true) {
                 div.style.borderStyle = 'double';
                 borderStyle.innerHTML = 'double';
-            } else {
-                div.style.borderStyle = 'solid';
-                borderStyle.innerHTML = 'solid';
-            }
+            } 
 
             let divFontBold = document.getElementById("fontBold");
             let divFontItalic = document.getElementById("fontItalic");
@@ -141,12 +138,15 @@
           }
 
         function random() {
+            let div = document.getElementById("div");
+
             let divHeight = document.getElementById("height");
             let divWidth = document.getElementById("width");
             let divBorderRadius = document.getElementById("borderRadius");
             let divBgColor = document.getElementById("color");
             let divBorderThickness = document.getElementById("borderThickness");
             let divBorderColor = document.getElementById("borderColor");
+            let borderStyles = ['solid', 'dashed', 'dotted', 'double'];
 
             divHeight.value = Math.floor(Math.random() * 101);
             divWidth.value = Math.floor(Math.random() * 101);
@@ -154,6 +154,7 @@
             divBgColor.value = getRandomColor();
             divBorderThickness.value = Math.floor(Math.random() * 101);
             divBorderColor.value = getRandomColor();
+            div.style.borderStyle = borderStyles[borderStyles.length * Math.random() | 0]
         }
 
         function reset() {
