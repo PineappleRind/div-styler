@@ -98,34 +98,16 @@
             fontFamily.innerHTML = div.style.fontFamily;
 
 
-            if (divBorderDashed.checked === true) {
+            if (divBorderDashed.checked === true || div.style.borderStyle === 'dashed') {
                 div.style.borderStyle = 'dashed';
                 borderStyle.innerHTML = 'dashed';
-            } else if (divBorderDotted.checked === true) {
+            } else if (divBorderDotted.checked === true || div.style.borderStyle === 'dotted') {
                 div.style.borderStyle = 'dotted';
                 borderStyle.innerHTML = 'dotted';
-            } else if (divBorderDouble.checked === true) {
+            } else if (divBorderDouble.checked === true || div.style.borderStyle === 'double') {
                 div.style.borderStyle = 'double';
                 borderStyle.innerHTML = 'double';
             } 
-
-            let divFontBold = document.getElementById("fontBold");
-            let divFontItalic = document.getElementById("fontItalic");
-            let divFontUnderline = document.getElementById("fontUnderline");
-
-            if (divFontBold.checked === true) {
-                div.style.fontWeight = '900';
-            } else if (divFontItalic.checked === true) {
-                div.style.fontStyle = 'italic';
-            } else if (divFontUnderline.checked === true) {
-                div.style.textDecoration = 'underline';
-            } else if (divFontBold.checked === false) {
-                div.style.fontWeight = '400';
-            } else {
-                div.style.fontWeight = '400';
-                div.style.fontStyle = 'normal';
-                div.style.textDecoration = 'none';
-            }
         }
 
         function getRandomColor() {
@@ -146,7 +128,11 @@
             let divBgColor = document.getElementById("color");
             let divBorderThickness = document.getElementById("borderThickness");
             let divBorderColor = document.getElementById("borderColor");
+
+            let borderStyle = document.getElementById("borderStyleCode");
             let borderStyles = ['solid', 'dashed', 'dotted', 'double'];
+
+            let fontFamilies = ['Georgia, serif', ' Times New Roman, serif', 'Helvetica, sans-serif', 'Zapfino, cursive', 'Noto Sans JP, sans-serif', 'Comic Sans MS', 'Verdana, sans-serif', 'Courier, monospace']
 
             divHeight.value = Math.floor(Math.random() * 101);
             divWidth.value = Math.floor(Math.random() * 101);
@@ -154,7 +140,8 @@
             divBgColor.value = getRandomColor();
             divBorderThickness.value = Math.floor(Math.random() * 101);
             divBorderColor.value = getRandomColor();
-            div.style.borderStyle = borderStyles[borderStyles.length * Math.random() | 0]
+            div.style.borderStyle = borderStyles[borderStyles.length * Math.random() | 0];
+            div.style.fontFamily = fontFamilies[Math.floor(Math.random() * fontFamilies.length)];
         }
 
         function reset() {
@@ -166,6 +153,19 @@
             let input = document.getElementById("divContent");
 
             div.textContent = input.value;
+        }
+
+        function hideCSSCode() {
+            let code = document.getElementById('cssCode');
+            let icon = document.getElementById('closeCode');
+
+            if (code.style.height !== '60px') {
+            code.style.height = '60px';
+            icon.innerHTML = '&uarr;'
+            } else {
+                code.style.height = '250px';
+                icon.innerHTML = '&times;'
+            }
         }
 
         let resetBtn = document.getElementById("resetButton");
@@ -180,4 +180,4 @@
 
         setInterval(function(){
             divFunction();
-        },10);
+        },10)

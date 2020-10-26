@@ -6,7 +6,7 @@
     <title>Div styler</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" type="image/png" href=”favicon.png”/>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
     <div class="adjust-container">
@@ -47,28 +47,25 @@
         <p>Font family <a style="cursor:pointer; text-decoration: underline; color:blue;" onclick="showModal()" class="help">(See all compatible fonts)</a></p>
         <textarea limit="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
         <p id="fontFamilyCustomError" style="font-weight:500; font-size:10px; margin:0; color:red; display:none;">Error: Font not found</p>
-        <p>Font attributes</p>
-        <input type="radio" name="fontAttributes" id="fontBold">
-        <label for="fontBold">Bold</label><br>
-        <input type="radio" name="fontAttributes" id="fontItalic">Italic<br>
-        <input type="radio" name="fontAttributes" id="fontUnderline">Underline<br>
         <br><br><hr>
         <button id="resetButton">Reset</button>
-        <button id="random">Random        </button>
+        <button id="random">Random</button>
             <br><br><br>
     </div>
     </div>
     <div id="div" style="font-family: Arial, Helvetica, sans-serif;"></div>
-    <div class="code">
+    <div id="cssCode" class="code">
+        <p onclick="hideCSSCode()" id="closeCode">&times;</p>
+        <h1>CSS Code</h1>
         <pre>
-        height: <span id="heightCode">100px</span>;
-        width: <span id="widthCode">100px</span>;
-        background-color: <span id="bgColorCode">#ff7f50</span>;
-        border: <span id="borderThicknessCode">2px</span> <span id="borderStyleCode">solid</span> <span id="borderColorCode">#000</span>;
-        border-radius: <span id="borderRadiusCode">100px</span>;
-        font-size: <span id="fontSizeCode">25px</span>; 
-        transform: rotateZ(<span id="rotateCode">0deg</span>); 
-        font-family: <span id="fontFamilyCode">Helvetica, sans-serif</span>;</pre>
+height: <span id="heightCode">100px</span>;
+width: <span id="widthCode">100px</span>;
+background-color: <span id="bgColorCode">#ff7f50</span>;
+border: <span id="borderThicknessCode">2px</span> <span id="borderStyleCode">solid</span> <span id="borderColorCode">#000</span>;
+border-radius: <span id="borderRadiusCode">100px</span>;
+font-size: <span id="fontSizeCode">25px</span>; 
+transform: rotateZ(<span id="rotateCode">0deg</span>); 
+font-family: <span id="fontFamilyCode">Helvetica, sans-serif</span>;</pre>
     </div>
 
     <div id="overlay" onclick="hideModal()">
