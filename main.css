@@ -64,9 +64,10 @@
             width:200px;
             overflow-y: scroll;
             background-color:rgb(198, 192, 231); 
-            box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.267),  inset 19px 18px 41px 0px #8f89a8;
+            box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.267),  inset 19px 18px 41px 0px #8f89a8;
             bottom:0;
             z-index:6;
+            transition:0.1s;
         }
 
         .adjust-container div {
@@ -195,6 +196,8 @@
             position:fixed;
             display:none;
             z-index:12;
+            box-shadow:0 0 20px 5px rgba(0, 0, 0, 0.267);
+            right:10px;
         }
 
         .list-item {

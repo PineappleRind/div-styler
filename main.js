@@ -196,20 +196,23 @@
         }
 
         let openButton = document.getElementById("mobileOpenControls");
-
         function mobile() {
             let adjustContainer = document.getElementById('adjustContainer');
-
-            if (adjustContainer.style.left === '100%') {
-                adjustContainer.style.left = '0px';
-                openButton.innerHTML = 'Hide controls';
-            } else {
-                adjustContainer.style.left = '100%';
-                openButton.innerHTML = 'Show controls';
-            }
+                if (adjustContainer.style.left != '100%') {
+                    adjustContainer.style.left = '100%';
+                    openButton.innerHTML = 'Show controls';
+                } else {
+                    adjustContainer.style.left = '0px';
+                    openButton.innerHTML = 'Hide controls';
+                }
         }
 
-        mobile();
+        if (window.matchMedia("(max-width: 700px)").matches) {
+            mobile();
+        } else {
+            adjustContainer.style.left = 'calc(100% - 400px)';
+            adjustContainer.style.right = '0px'
+        }
 
         let resetBtn = document.getElementById("resetButton");
         resetBtn.addEventListener("click", function(){
