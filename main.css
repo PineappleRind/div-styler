@@ -191,6 +191,12 @@
             text-align:center;
         }
 
+        #mobileOpenControls {
+            position:fixed;
+            display:none;
+            z-index:12;
+        }
+
         .list-item {
             font-size: 30px;
             margin:20px;
@@ -240,38 +246,21 @@
             border-radius:3px;
         }
 
-        .overlay-mobile {
-            position:fixed;
-            z-index:9;
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            color:white;
-            background-color:black;
-            display:flex;
-            flex-direction:column;
-            justify-content: center;
-            align-items: center;
-            text-align:center;
-            font-size:4vw;
-            font-family:"Noto Sans JP", sans-serif;
-            font-weight:100;
-
-            /* Will be invisible on desktop. */
-            display:none;
-        }
-
-        .overlay-mobile h1 {
-            font-weight:300;
-        }
 
         @media only screen and (max-width:700px) {
-            .adjust-container, .adjust-container div {
-                left:100%;
+            .adjust-container {
+                left:0;
+                right:0;
+                width:100%;
             }
 
-            .overlay-mobile {
+            .adjust-container div {
+                width:70%;
+                left:0;
+                right:0;
+            }
+
+            #mobileOpenControls {
                 display:block;
             }
         }

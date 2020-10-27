@@ -195,6 +195,22 @@
             }
         }
 
+        let openButton = document.getElementById("mobileOpenControls");
+
+        function mobile() {
+            let adjustContainer = document.getElementById('adjustContainer');
+
+            if (adjustContainer.style.left === '100%') {
+                adjustContainer.style.left = '0px';
+                openButton.innerHTML = 'Hide controls';
+            } else {
+                adjustContainer.style.left = '100%';
+                openButton.innerHTML = 'Show controls';
+            }
+        }
+
+        mobile();
+
         let resetBtn = document.getElementById("resetButton");
         resetBtn.addEventListener("click", function(){
             reset();
@@ -204,6 +220,10 @@
         randomBtn.addEventListener("click", function(){
             random();
         });
+
+        openButton.addEventListener("click", function(){
+            mobile();
+        })
 
         inputColor.addEventListener("input", function(){
             changeBgColor();
