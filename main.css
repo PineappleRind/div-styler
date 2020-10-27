@@ -67,7 +67,7 @@
             box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.267),  inset 19px 18px 41px 0px #8f89a8;
             bottom:0;
             z-index:6;
-            transition:0.1s;
+            transition:0.5s;
         }
 
         .adjust-container div {
