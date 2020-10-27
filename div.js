@@ -90,6 +90,13 @@ function divFunction() {
     skew.innerHtml = (divSkew.value / 5) - 10;
 }
 
+function changeOpacity() {
+    adjustContainer.style.opacity = 0.6;
+    setTimeout(function() {
+        adjustContainer.style.opacity = 1;
+    }, 1000);
+}
+
 let inputColor = document.getElementById('bodyBgColor');
 
 function changeBgColor() {
@@ -187,6 +194,7 @@ resetBtn.addEventListener("click", function() {
 let randomBtn = document.getElementById("random");
 randomBtn.addEventListener("click", function() {
     random();
+    changeOpacity();
 });
 
 inputColor.addEventListener("input", function() {
@@ -195,6 +203,7 @@ inputColor.addEventListener("input", function() {
 
 body.addEventListener("input", function() {
     changeBorderStyle();
+    changeOpacity();
 })
 
 setInterval(function() {
