@@ -140,6 +140,12 @@
             return color;
           }
 
+          function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
         function random() {
             let div = document.getElementById("div");
 
@@ -155,8 +161,8 @@
 
             let fontFamilies = ['Georgia, serif', ' Times New Roman, serif', 'Helvetica, sans-serif', 'Zapfino, cursive', 'Noto Sans JP, sans-serif', 'Comic Sans MS', 'Verdana, sans-serif', 'Courier, monospace']
 
-            divHeight.value = Math.floor(Math.random() * 101);
-            divWidth.value = Math.floor(Math.random() * 101);
+            divHeight.value = getRandomInt(10,101)
+            divWidth.value = getRandomInt(10,101)
             divBorderRadius.value = Math.floor(Math.random() * 101);
             divBgColor.value = getRandomColor();
             divBorderThickness.value = Math.floor(Math.random() * 101);

@@ -166,7 +166,7 @@
             overflow:hidden;
             font-family: Helvetica, sans-serif;
             border-radius:100px;
-            transition:1s;
+            transition:0.7s;
         }
 
         #overlay {
