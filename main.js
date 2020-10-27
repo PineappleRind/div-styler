@@ -130,7 +130,7 @@
             let divBorderColor = document.getElementById("borderColor");
 
             let borderStyle = document.getElementById("borderStyleCode");
-            let borderStyles = ['solid', 'dashed', 'dotted', 'double'];
+            let borderStyles = ['solid', 'dotted', 'double', 'dashed'];
 
             let fontFamilies = ['Georgia, serif', ' Times New Roman, serif', 'Helvetica, sans-serif', 'Zapfino, cursive', 'Noto Sans JP, sans-serif', 'Comic Sans MS', 'Verdana, sans-serif', 'Courier, monospace']
 
