@@ -14,6 +14,7 @@
             let divBorderRadius = document.getElementById("borderRadius");
             let divBgColor = document.getElementById("color");
             let divRotate = document.getElementById("rotate");
+            let divSkew = document.getElementById('skew');
 
             let divBorderThickness = document.getElementById("borderThickness");
             let divBorderColor = document.getElementById("borderColor");
@@ -26,7 +27,7 @@
             div.style.borderWidth = divBorderThickness.value/4 + "px";
             div.style.backgroundColor = divBgColor.value;
             div.style.borderColor = divBorderColor.value;
-            div.style.transform = 'rotateZ(' + Math.ceil(divRotate.value * 3.6) + "deg";
+            div.style.transform = 'rotateZ(' + Math.ceil(divRotate.value * 3.6) + "deg) " + 'skewX(' + Math.floor((divSkew.value/5)-10) + 'deg';
 
             if (divBorderRadius.value === 100) {
                 div.style.borderRadius = '50%';
