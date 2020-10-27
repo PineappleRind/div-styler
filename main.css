@@ -97,7 +97,7 @@
             border-radius:20px;
             padding-left:20px;
             cursor:text;
-            transition:1s;
+            transition:1s cubic-bezier(.60,0,.40,1);
             height:250px;
     } 
 
