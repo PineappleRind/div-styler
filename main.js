@@ -34,9 +34,7 @@
                 div.style.borderRadius = divBorderRadius.value * 2 + "px";
             }
 
-            let divBorderDashed = document.getElementById('borderDashed');
-            let divBorderDotted = document.getElementById('borderDotted');
-            let divBorderDouble = document.getElementById('borderDouble');
+            
 
             let divFontSize = document.getElementById('fontSize');
             div.style.fontSize = divFontSize.value/1.1 + 'px';
@@ -98,16 +96,29 @@
             fontFamily.innerHTML = div.style.fontFamily;
 
 
-            if (divBorderDashed.checked === true || div.style.borderStyle === 'dashed') {
+        }
+
+        function changeBorderStyle() {
+            let div = document.getElementById("div");
+
+            let divBorderSolid = document.getElementById('borderSolid');
+            let divBorderDashed = document.getElementById('borderDashed');
+            let divBorderDotted = document.getElementById('borderDotted');
+            let divBorderDouble = document.getElementById('borderDouble');
+
+            if (divBorderDashed.checked === true) {
                 div.style.borderStyle = 'dashed';
                 borderStyle.innerHTML = 'dashed';
-            } else if (divBorderDotted.checked === true || div.style.borderStyle === 'dotted') {
+            } else if (divBorderDotted.checked === true) {
                 div.style.borderStyle = 'dotted';
                 borderStyle.innerHTML = 'dotted';
-            } else if (divBorderDouble.checked === true || div.style.borderStyle === 'double') {
+            } else if (divBorderDouble.checked === true) {
                 div.style.borderStyle = 'double';
                 borderStyle.innerHTML = 'double';
-            } 
+            } else if (divBorderSolid.checked === true) {
+                div.style.borderStyle = 'solid';
+                borderStyle.innerHTML = 'solid';
+            }
         }
 
         function getRandomColor() {
@@ -180,4 +191,5 @@
 
         setInterval(function(){
             divFunction();
-        },10)
+            changeBorderStyle();
+        },100)
