@@ -7,6 +7,10 @@
             font-family:Arial;
         }
 
+        #body {
+            transition:1s;
+        }
+
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -162,6 +166,7 @@
             overflow:hidden;
             font-family: Helvetica, sans-serif;
             border-radius:100px;
+            transition:1s;
         }
 
         #overlay {

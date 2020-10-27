@@ -80,12 +80,12 @@
             let height = document.getElementById("heightCode");
             let width = document.getElementById("widthCode");
             let bg = document.getElementById("bgColorCode");
-            let borderStyle = document.getElementById("borderStyleCode");
             let borderColor = document.getElementById("borderColorCode");
             let borderRadius = document.getElementById('borderRadiusCode');
             let borderThickness = document.getElementById('borderThicknessCode');
             let fontSize = document.getElementById('fontSizeCode');
             let rotate = document.getElementById('rotateCode');
+            let skew = document.getElementById('skewCode');
             let fontFamily = document.getElementById('fontFamilyCode');
 
             bg.innerHTML = divBgColor.value;
@@ -97,8 +97,14 @@
             fontSize.innerHTML = Math.floor(divFontSize.value/1.1) + 'px';
             rotate.innerHTML = Math.ceil(divRotate.value * 3.6) + "deg";
             fontFamily.innerHTML = div.style.fontFamily;
+            skew.innerHtml = Math.floor((divSkew.value/5)-10)
+        }
 
+        let inputColor = document.getElementById('bodyBgColor');
 
+        function changeBgColor() {
+            let body = document.getElementById('body');
+            body.style.backgroundColor = inputColor.value;
         }
 
         function changeBorderStyle() {
@@ -107,6 +113,7 @@
             let divBorderSolid = document.getElementById('borderSolid');
             let divBorderDashed = document.getElementById('borderDashed');
             let divBorderDotted = document.getElementById('borderDotted');
+            let borderStyle = document.getElementById("borderStyleCode");
             let divBorderDouble = document.getElementById('borderDouble');
 
             if (divBorderDashed.checked === true) {
@@ -191,6 +198,10 @@
         randomBtn.addEventListener("click", function(){
             random();
         });
+
+        inputColor.addEventListener("input", function(){
+            changeBgColor();
+        })
 
         setInterval(function(){
             divFunction();
