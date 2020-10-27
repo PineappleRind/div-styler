@@ -97,7 +97,7 @@
             fontSize.innerHTML = Math.floor(divFontSize.value/1.1) + 'px';
             rotate.innerHTML = Math.ceil(divRotate.value * 3.6) + "deg";
             fontFamily.innerHTML = div.style.fontFamily;
-            skew.innerHtml = Math.floor((divSkew.value/5)-10)
+            skew.innerHtml = (divSkew.value/5)-10;
         }
 
         let inputColor = document.getElementById('bodyBgColor');
@@ -155,11 +155,11 @@
             let divBgColor = document.getElementById("color");
             let divBorderThickness = document.getElementById("borderThickness");
             let divBorderColor = document.getElementById("borderColor");
-
-            let borderStyle = document.getElementById("borderStyleCode");
+            let divFontSize = document.getElementById('fontSize');
+            let divFontColor = document.getElementById("fontColor");
             let borderStyles = ['solid', 'dotted', 'double', 'dashed'];
 
-            let fontFamilies = ['Georgia, serif', ' Times New Roman, serif', 'Helvetica, sans-serif', 'Zapfino, cursive', 'Noto Sans JP, sans-serif', 'Comic Sans MS', 'Verdana, sans-serif', 'Courier, monospace']
+            let fontFamilies = ['Georgia, serif', ' Times New Roman, serif', 'Helvetica, sans-serif', 'Zapfino, cursive', 'Noto Sans JP, sans-serif', 'Comic Sans MS, cursive', 'Verdana, sans-serif', 'Courier, monospace', 'Grandstander, sans-serif']
 
             divHeight.value = getRandomInt(10,101)
             divWidth.value = getRandomInt(10,101)
@@ -169,6 +169,12 @@
             divBorderColor.value = getRandomColor();
             div.style.borderStyle = borderStyles[borderStyles.length * Math.random() | 0];
             div.style.fontFamily = fontFamilies[Math.floor(Math.random() * fontFamilies.length)];
+            divFontSize.value = getRandomInt(35, 90);
+            divFontColor.value = getRandomColor();
+
+            if (divFontColor.value === divBgColor.value) {
+                divFontColor.value = getRandomColor();
+            }
         }
 
         function reset() {
@@ -230,9 +236,12 @@
 
         inputColor.addEventListener("input", function(){
             changeBgColor();
+        });
+
+        body.addEventListener("input", function(){
+            changeBorderStyle();
         })
 
         setInterval(function(){
             divFunction();
-            changeBorderStyle();
         },10)
