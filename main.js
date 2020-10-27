@@ -192,4 +192,4 @@
         setInterval(function(){
             divFunction();
             changeBorderStyle();
-        },100)
+        },10)
