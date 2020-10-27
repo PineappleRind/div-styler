@@ -58,15 +58,17 @@
                 div.style.fontFamily = 'Courier, monospace'
             } else if (inputFont === 'Helvetica') {
                 div.style.fontFamily = 'Helvetica, sans-serif'
-            } 
+            } else if (inputFont === 'Grandstander') {
+                div.style.fontFamily = 'Grandstander, sans-serif'
+            }
 
-            if (inputFont != 'Noto Sans JP' || inputFont != 'noto sans' || inputFont != 'Zapfino' || inputFont != 'Verdana' || inputFont != 'Comic Sans MS' || inputFont != 'Times New Roman' || inputFont != 'Georgia' || inputFont != 'Courier' || inputFont != 'Helvetica' || inputFont != '') {
+            if (inputFont != 'Noto Sans JP' || inputFont != 'noto sans' || inputFont != 'Zapfino' || inputFont != 'Verdana' || inputFont != 'Comic Sans MS' || inputFont != 'Times New Roman' || inputFont != 'Georgia' || inputFont != 'Courier' || inputFont != 'Helvetica' || inputFont != 'Grandstander' || inputFont != '') {
                 inputFontError.style.display = 'block';
             } else {
                 inputFontError.style.display = 'none';
             }
 
-            if (inputFont === 'Noto Sans JP' || inputFont === 'noto sans' || inputFont === 'Zapfino' || inputFont === 'Verdana' || inputFont === 'Comic Sans MS' || inputFont === 'Times New Roman' || inputFont === 'Georgia' || inputFont === 'Courier' || inputFont === 'Helvetica' || inputFont === '') {
+            if (inputFont === 'Noto Sans JP' || inputFont === 'noto sans' || inputFont === 'Zapfino' || inputFont === 'Verdana' || inputFont === 'Comic Sans MS' || inputFont === 'Times New Roman' || inputFont === 'Georgia' || inputFont === 'Courier' || inputFont === 'Helvetica' || inputFont === '' || inputFont === 'Grandstander') {
                 inputFontError.style.display = 'none';
             }
 

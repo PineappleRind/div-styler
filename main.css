@@ -223,6 +223,10 @@
             font-family:'Courier New', Courier, monospace
         }
 
+        .list-item.gnd {
+            font-family:'Grandstander', sans-serif;
+        }
+
         hr {
             color:white;
             border:none;
