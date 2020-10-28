@@ -32,6 +32,14 @@ function divFunction() {
     let divFontSize = document.getElementById('fontSize');
     div.style.fontSize = divFontSize.value / 1.1 + 'px';
 
+    let divFontShadowX = document.getElementById('fontShadowX');
+    let divFontShadowY = document.getElementById('fontShadowY');
+    let divFontShadowColor = document.getElementById('fontShadowColor');
+    let divFontShadowBlur = document.getElementById('fontShadowBlur')
+
+
+    div.style.textShadow = divFontShadowX.value/10 + 'px ' + divFontShadowY.value/10 + 'px ' + divFontShadowBlur.value/5 + 'px ' + divFontShadowColor.value;
+
     let inputFont = document.getElementById('fontFamilyCustom').value;
     let inputFontError = document.getElementById('fontFamilyCustomError');
 

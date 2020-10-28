@@ -52,8 +52,18 @@
         <input type="range" id="fontSize">
         <p>Font color</p>
         <input type="color" id="fontColor">
-        <p>Font family <a href="https://div-styler.netlify.app/fonts.html" target="_blank" class="help">(See all compatible fonts)</a></p>
-        <textarea maxlength="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
+        <hr>
+        <input id="fontShadowEnable" type="checkbox"><label for="fontShadowEnable">Font shadow</h2>
+        <p>X coordinates</p>
+        <input type="range" id="fontShadowX">
+        <p>Y coordinates</p>
+        <input type="range" id="fontShadowY">
+        <p>Blur radius</p>
+        <input value="0" type="range" id="fontShadowBlur">
+        <p>Shadow color</p>
+        <input type="color" id="fontShadowColor">
+        <p>Font family <a href="https://div-styler.netlify.app/fonts.html" class="help">(See all compatible fonts)</a></p>
+        <textarea limit="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
         <p id="fontFamilyCustomError" style="font-weight:700; font-size:15px; margin:0; color:red; display:none;">Error: Font not found</p>
         <br><br><hr>
         <p>Background color</p>
