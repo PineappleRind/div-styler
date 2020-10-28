@@ -19,7 +19,7 @@ function divFunction() {
     div.style.backgroundColor = divBgColor.value;
     div.style.borderColor = divBorderColor.value;
     div.style.transform = 'rotateZ(' + Math.ceil(divRotate.value * 3.6) + "deg) " + 'skewX(' + Math.floor((divSkew.value / 5) - 10) + 'deg';
-    div.style.opacity = Math.round(divOpacity.value/100);
+    div.style.opacity = divOpacity.value/100;
 
     if (divBorderRadius.value === 100) {
         div.style.borderRadius = '50%';
