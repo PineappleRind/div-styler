@@ -33,14 +33,12 @@ function divFunction() {
     div.style.fontSize = divFontSize.value / 1.1 + 'px';
 
     let divFontShadowEnable = document.getElementById('fontShadowEnable');
-
+    let divFontShadowX = document.getElementById('fontShadowX');
+    let divFontShadowY = document.getElementById('fontShadowY');
+    let divFontShadowColor = document.getElementById('fontShadowColor');
+    let divFontShadowBlur = document.getElementById('fontShadowBlur')
     if (divFontShadowEnable.checked === true) {
-        let divFontShadowX = document.getElementById('fontShadowX');
-        let divFontShadowY = document.getElementById('fontShadowY');
-        let divFontShadowColor = document.getElementById('fontShadowColor');
-        let divFontShadowBlur = document.getElementById('fontShadowBlur')
-
-        div.style.textShadow = divFontShadowX.value/10 + 'px ' + divFontShadowY.value/10 + 'px ' + divFontShadowBlur.value/5 + 'px ' + divFontShadowColor.value;
+        div.style.textShadow = divFontShadowX.value/10 - 5 + 'px ' + divFontShadowY.value/10 + 'px ' + divFontShadowBlur.value/5 + 'px ' + divFontShadowColor.value;
     } else {
         div.style.textShadow = '';
     }
@@ -91,6 +89,10 @@ function divFunction() {
     let rotate = document.getElementById('rotateCode');
     let skew = document.getElementById('skewCode');
     let fontFamily = document.getElementById('fontFamilyCode');
+    let fontShadowX = document.getElementById('textShadowXCode');
+    let fontShadowY = document.getElementById('textShadowYCode');
+    let fontShadowColor = document.getElementById('textShadowColorCode');
+    let fontShadowBlur = document.getElementById('textShadowBlurCode');
 
     bg.innerHTML = divBgColor.value;
     height.innerHTML = divHeight.value * 5 + "px";
@@ -101,7 +103,11 @@ function divFunction() {
     fontSize.innerHTML = Math.floor(divFontSize.value / 1.1) + 'px';
     rotate.innerHTML = Math.ceil(divRotate.value * 3.6) + "deg";
     fontFamily.innerHTML = div.style.fontFamily;
-    skew.innerHtml = (divSkew.value / 5) - 10;
+    skew.innerHTML = Math.ceil(divSkew.value / 5) - 10 + "deg";
+    fontShadowX.innerHTML = Math.round(divFontShadowX.value/10 - 5) + 'px ';
+    fontShadowY.innerHTML = Math.round(divFontShadowY.value/10 - 5) + 'px ';
+    fontShadowColor.innerHTML = divFontShadowColor.value;
+    fontShadowBlur.innerHTML = divFontShadowBlur.value/5 + 'px ';
 }
 
 let inputColor = document.getElementById('bodyBgColor');
@@ -157,7 +163,7 @@ function hideCSSCode() {
             code.style.display = 'none';
         }, 1000)
     } else {
-        code.style.height = '250px';
+        code.style.height = '300px';
         icon.innerHTML = '&times;'
     }
 }
@@ -168,9 +174,14 @@ function minCSSCode() {
         code.style.height = '60px';
         minIcon.innerHTML = '&uarr;';
     } else {
-        code.style.height = '250px';
+        code.style.height = '300px';
         minIcon.innerHTML = '&darr;';
     }
+}
+
+function switchCSSCode() {
+    let divButton;
+    let fontButton;
 }
 
 let openButton = document.getElementById("mobileOpenControls");
