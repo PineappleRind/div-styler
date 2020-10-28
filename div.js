@@ -184,6 +184,39 @@ function switchCSSCode() {
     let fontButton;
 }
 
+function randomBgColor() {
+    let body = document.getElementById('body');
+    body.style.backgroundColor = getRandomColor();
+}
+
+function getRandomColor() {
+    var letters = '0123456789';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 9)];
+    }
+    return color;
+  }
+
+  let fontCode = document.getElementById('fontCode');
+  let divCode = document.getElementById('divCode');
+  let divButton = document.getElementById('divCodeButton');
+  let fontButton = document.getElementById('fontCodeButton');
+
+  function switchToDiv() {
+      divCode.style.display = 'block';
+      divButton.style.backgroundColor = 'rgb(91, 106, 243)';
+      fontButton.style.backgroundColor = '';
+      fontCode.style.display = 'none';
+  }
+
+  function switchToFont() {
+      divCode.style.display = 'none';
+      fontCode.style.display = 'block';
+      divButton.style.backgroundColor = '';
+      fontButton.style.backgroundColor = 'rgb(91, 106, 243)';
+  }
+
 let openButton = document.getElementById("mobileOpenControls");
 let adjustContainer = document.getElementById('adjustContainer');
 let mql = window.matchMedia('(max-width: 700px)');
@@ -219,6 +252,9 @@ if (mql.matches) {
     });
 }
 
+randomBgColor();
+
+
 let resetBtn = document.getElementById("resetButton");
 resetBtn.addEventListener("click", function() {
     reset();
@@ -235,8 +271,7 @@ inputColor.addEventListener("input", function() {
 
 body.addEventListener("input", function() {
     changeBorderStyle();
-})
-
+});
 setInterval(function() {
     divFunction();
 }, 10)

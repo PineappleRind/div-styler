@@ -84,17 +84,19 @@
         <p onclick="minCSSCode()" id="minCode">&darr;</p>
         <p onclick="hideCSSCode()" id="closeCode">&times;</p>
         <h1>CSS Code</h1>
-        <!-- <button>Div</button><button style="border-right:none;">Font</button><br> -->
-        <pre>
+        <button onclick="switchToDiv()" style="background-color: rgb(91, 106, 243);" id="divCodeButton">Div</button><button onclick="switchToFont();" style="border-right:none;" id="fontCodeButton">Font</button><br>
+        <pre id="divCode">
 height: <span id="heightCode">250px</span>;
 width: <span id="widthCode">250px</span>;
 background-color: <span id="bgColorCode">#ff7f50</span>;
 border: <span id="borderThicknessCode">3px</span> <span id="borderStyleCode">solid</span> <span id="borderColorCode">#000000</span>;
 border-radius: <span id="borderRadiusCode">100px</span>;
-font-size: <span id="fontSizeCode">45px</span>; 
-transform: rotateZ(<span id="rotateCode">0deg</span>) skewX(<span id="skewCode">0deg</span>); 
+transform: rotateZ(<span id="rotateCode">0deg</span>) skewX(<span id="skewCode">0deg</span>); </pre>
+        <pre id="fontCode" style="display:none;">
 font-family: <span id="fontFamilyCode">Arial, Helvetica, sans-serif</span>;
-text-shadow: <span id="textShadowXCode">0px</span><span id="textShadowYCode">0px</span><span id="textShadowBlurCode">0px</span><span id="textShadowColorCode">#000000</span></pre>
+text-shadow: <span id="textShadowXCode">0px</span><span id="textShadowYCode">0px</span><span id="textShadowBlurCode">0px</span><span id="textShadowColorCode">#000000</span>
+font-size: <span id="fontSizeCode">45px</span>; 
+        </pre>
     </div>
 
     <div id="overlay" onclick="hideModal()">
