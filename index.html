@@ -29,7 +29,7 @@
         <p>Roundness</p>
         <input type="range" id="borderRadius">
         <p>Opacity</p>
-        <input type="range" id="opacity">
+        <input type="range" value="100" id="opacity">
         <br><br><hr>
         <h1>Border</h1>
         <p>Color</p>
@@ -47,13 +47,13 @@
         <label for="borderDouble">Double</label><br>
         <br><br><hr>
         <h1>Content</h1>
-        <textarea maxlength="29" id="divContent" onkeyup="updateContent();" onkeydown="updateContent();" onkeypress="updateContent();""></textarea>
+        <textarea maxlength="50" id="divContent" onkeyup="updateContent();" onkeydown="updateContent();" onkeypress="updateContent();""></textarea>
         <p>Font size</p>
         <input type="range" id="fontSize">
         <p>Font color</p>
         <input type="color" id="fontColor">
-        <p>Font family <a href="https://div-styler.netlify.app/fonts.html" class="help">(See all compatible fonts)</a></p>
-        <textarea limit="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
+        <p>Font family <a href="https://div-styler.netlify.app/fonts.html" target="_blank" class="help">(See all compatible fonts)</a></p>
+        <textarea maxlength="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
         <p id="fontFamilyCustomError" style="font-weight:700; font-size:15px; margin:0; color:red; display:none;">Error: Font not found</p>
         <br><br><hr>
         <p>Background color</p>
@@ -61,10 +61,10 @@
         <button id="resetButton">Reset</button>
         <button id="random">Random</button><br>
         <input type="checkbox" id="randomWord">
-        <label for="randomWord">Random word</label>
+        <label for="randomWord">Also random word</label>
         <br>
         <input type="checkbox" id="randomContent">
-        <label for="randomContent">Random content</label>
+        <label for="randomContent">Also random content</label>
         <p id="randomErrorMessage" style="font-weight:700; font-size:15px; margin:0; color:red; display:none;">Error: Please check only one</p>
             <br><br><br>
     </div>
