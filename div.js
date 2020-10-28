@@ -32,14 +32,18 @@ function divFunction() {
     let divFontSize = document.getElementById('fontSize');
     div.style.fontSize = divFontSize.value / 1.1 + 'px';
 
-    let divFontShadowX = document.getElementById('fontShadowX');
-    let divFontShadowY = document.getElementById('fontShadowY');
-    let divFontShadowColor = document.getElementById('fontShadowColor');
-    let divFontShadowBlur = document.getElementById('fontShadowBlur')
+    let divFontShadowEnable = document.getElementById('fontShadowEnable');
 
+    if (divFontShadowEnable.checked === true) {
+        let divFontShadowX = document.getElementById('fontShadowX');
+        let divFontShadowY = document.getElementById('fontShadowY');
+        let divFontShadowColor = document.getElementById('fontShadowColor');
+        let divFontShadowBlur = document.getElementById('fontShadowBlur')
 
-    div.style.textShadow = divFontShadowX.value/10 + 'px ' + divFontShadowY.value/10 + 'px ' + divFontShadowBlur.value/5 + 'px ' + divFontShadowColor.value;
-
+        div.style.textShadow = divFontShadowX.value/10 + 'px ' + divFontShadowY.value/10 + 'px ' + divFontShadowBlur.value/5 + 'px ' + divFontShadowColor.value;
+    } else {
+        div.style.textShadow = '';
+    }
     let inputFont = document.getElementById('fontFamilyCustom').value;
     let inputFontError = document.getElementById('fontFamilyCustomError');
 
@@ -98,13 +102,6 @@ function divFunction() {
     rotate.innerHTML = Math.ceil(divRotate.value * 3.6) + "deg";
     fontFamily.innerHTML = div.style.fontFamily;
     skew.innerHtml = (divSkew.value / 5) - 10;
-}
-
-function changeOpacity() {
-    adjustContainer.style.opacity = 0.6;
-    setTimeout(function() {
-        adjustContainer.style.opacity = 1;
-    }, 1000);
 }
 
 let inputColor = document.getElementById('bodyBgColor');
@@ -194,6 +191,21 @@ if (mql.matches) {
     openButton.addEventListener("click", function() {
         mobileOpen();
     })
+
+    function changeOpacity() {
+        adjustContainer.style.opacity = 0.6;
+        setTimeout(function() {
+            adjustContainer.style.opacity = 1;
+        }, 1000);
+    }
+
+    body.addEventListener("input", function() {
+        changeOpacity();
+    });
+    let randomBtn = document.getElementById("random");
+    randomBtn.addEventListener("click", function() {
+        changeOpacity();
+    });
 }
 
 let resetBtn = document.getElementById("resetButton");
@@ -204,7 +216,6 @@ resetBtn.addEventListener("click", function() {
 let randomBtn = document.getElementById("random");
 randomBtn.addEventListener("click", function() {
     random();
-    changeOpacity();
 });
 
 inputColor.addEventListener("input", function() {
@@ -213,7 +224,6 @@ inputColor.addEventListener("input", function() {
 
 body.addEventListener("input", function() {
     changeBorderStyle();
-    changeOpacity();
 })
 
 setInterval(function() {
