@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pineapplerind</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            height:100%;
+            width:100%;
+            background:linear-gradient(to right, orange, yellow, red, purple, blue, cyan, green, yellow);
+            background-size: 1500% 1500%;
+            background-position: 0 0;
+            font-family:inter;
+            font-weight:300;
+            animation: adjustBg 200s infinite linear
+        }
+
+        .flex {
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+            text-align:center;
+            animation-duration: 1s;
+        }
+
+        #flexOne {
+            animation-duration: 2s;
+            top:40%;
+            position:absolute;
+        }
+
+        #flexTwo {
+            animation-duration: 2s;
+            display:none;
+            position:absolute;
+            top:100%;
+        }
+
+        .container {
+            background:rgb(227, 227, 227);
+            border-radius:10px;
+            padding:10px;
+            border: 2px solid #ddd;
+            box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.212);
+            width: fit-content;
+        }
+
+        .foot {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:30px;
+        }
+
+        .foot div {
+            background-color:rgba(0, 0, 0, 0.511);
+            padding:10px;
+            height:30px;
+            line-height:0px;
+            position:fixed;
+            bottom:10px;
+        }
+
+        .foot div p {
+            color:white;
+        }
+
+        input {
+            margin-bottom:20px;
+        }
+
+        h1, h2 {
+            font-weight:400;
+        }
+
+        @keyframes go-down {
+            from {opacity:1;}
+            to {opacity:0; top:100%;}
+        }
+
+        @keyframes go-up {
+            from {opacity:0; top:100%;}
+            to {opacity: 1;}
+        }
+
+        @keyframes adjustBg {
+            0% {background-position: 0% 0%;}
+            50% {background-position: 100% 100%;}
+            100% {background-position: 0% 0%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="flex one">
+        <div class="container" id="flexOne">
+            <h1>Enter password</h1>
+            <input type="password" id="password">
+        </div>
+    </div>
+    <div class="flex two">
+        <div class="container" id="flexTwo">
+            <h1>They are</h1>
+            <p>@RandoAnimation</p>
+            <p>@SoccerPanda2647</p>
+            <p class="small">(and @Camper a little)</p>
+        </div>
+    </div>
+
+    <div class="foot">
+        <div>
+        <p>created by pineapplerind</p>
+    </div>
+    </div>
+    </div>
+    <script>
+        let author = 'pineapplerind';
+        let great = author;
+        let pass = great;
+
+        let input = document.getElementById('password');
+        function password() {
+
+            let flexOne = document.getElementById('flexOne');
+            let flexTwo = document.getElementById('flexTwo');
+
+            if (input.value === pass) {
+                flexOne.style.animationName = 'go-down';
+
+                setTimeout(function(){
+                    flexOne.style.display = 'none';
+                },2000);
+
+                flexTwo.style.animationName = 'go-up';
+                flexTwo.style.display = 'block';
+                flexTwo.style.top = '40%'
+            }
+        }
+
+        document.addEventListener("input", function(){
+            password();
+        });
+    </script>
+    <script>    </script>
+</body>
+</html>

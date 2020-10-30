@@ -172,10 +172,12 @@ function minCSSCode() {
     let minIcon = document.getElementById('minCode')
     if (code.style.height != '60px') {
         code.style.height = '60px';
-        minIcon.style.transform = 'rotateZ(180deg)';
+        minIcon.style.transform = 'rotateX(180deg)';
+        minIcon.style.transition = '0.5s'
     } else {
         code.style.height = '300px';
-        minIcon.style.transform = 'rotateZ(0deg)';
+        minIcon.style.transform = 'rotateX(0deg)';
+        minIcon.style.transition = '0.5s'
     }
 }
 
@@ -186,10 +188,19 @@ function switchCSSCode() {
 
 function randomBgColor() {
     let body = document.getElementById('body');
-    body.style.backgroundColor = getRandomColor();
+    body.style.backgroundColor = getRandomDarkColor();
 }
 
 function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  function getRandomDarkColor() {
     var letters = '0123456789';
     var color = '#';
     for (var i = 0; i < 6; i++) {
