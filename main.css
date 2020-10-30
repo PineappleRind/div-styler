@@ -136,7 +136,8 @@
 
     .code #minCode {
         right:50px;
-        color:#555300
+        color:#555300;
+        transition: 0.5s
     }
 
     .code #closeCode {

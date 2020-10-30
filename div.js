@@ -172,10 +172,10 @@ function minCSSCode() {
     let minIcon = document.getElementById('minCode')
     if (code.style.height != '60px') {
         code.style.height = '60px';
-        minIcon.innerHTML = '&uarr;';
+        minIcon.style.transform = 'rotateZ(180deg)';
     } else {
         code.style.height = '300px';
-        minIcon.innerHTML = '&darr;';
+        minIcon.style.transform = 'rotateZ(0deg)';
     }
 }
 
