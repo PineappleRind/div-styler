@@ -42,10 +42,11 @@
         .container {
             background:rgb(227, 227, 227);
             border-radius:10px;
-            padding:10px;
+            padding:30px;
             border: 2px solid #ddd;
             box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.212);
             width: fit-content;
+            font-weight:400;
         }
 
         .foot {
@@ -68,12 +69,26 @@
             color:white;
         }
 
+        .small {
+            font-size:10px;
+            margin:0;
+            transform:rotateZ(3deg) translatey(-10px);
+        }
+
         input {
             margin-bottom:20px;
         }
 
         h1, h2 {
             font-weight:400;
+        }
+
+        a:visited {
+            color:blue;
+        }
+        
+        #numberOne, #numberTwo, #numberThree {
+            animation-duration:1s;
         }
 
         @keyframes go-down {
@@ -91,6 +106,14 @@
             50% {background-position: 100% 100%;}
             100% {background-position: 0% 0%;}
         }
+
+        @keyframes zoom-in {
+            from {transform:scale(0)};
+        }
+
+        @keyframes rotate-in {
+            from {transform:scale(0) rotateZ(-60deg)};
+        }
     </style>
 </head>
 <body>
@@ -98,14 +121,15 @@
         <div class="container" id="flexOne">
             <h1>Enter password</h1>
             <input type="password" id="password">
+            <p id="error" style="font-weight:800; color:red; display:none;">Incorrect password</p>
         </div>
     </div>
     <div class="flex two">
         <div class="container" id="flexTwo">
             <h1>They are</h1>
-            <p>@RandoAnimation</p>
-            <p>@SoccerPanda2647</p>
-            <p class="small">(and @Camper a little)</p>
+            <a style="display:block; margin:5px;" href="https://flipanim.com/profile?name=RandoAnimation" id="numberOne">@RandoAnimation</a>
+            <a style="display:block; margin:5px;" href="https://flipanim.com/profile?name=SoccerPanda2647" id="numberTwo">@SoccerPanda2647</a>
+            <p style="display:block; margin:5px;" id="numberThree" class="small">(and <a href="https://flipanim.com/profile?name=Camper">@Camper</a> a little)</p>
         </div>
     </div>
 
@@ -125,6 +149,9 @@
 
             let flexOne = document.getElementById('flexOne');
             let flexTwo = document.getElementById('flexTwo');
+            let numberOne = document.getElementById('numberOne');
+            let numberTwo = document.getElementById('numberTwo');
+            let numberThree = document.getElementById('numberThree');
 
             if (input.value === pass) {
                 flexOne.style.animationName = 'go-down';
@@ -135,7 +162,27 @@
 
                 flexTwo.style.animationName = 'go-up';
                 flexTwo.style.display = 'block';
-                flexTwo.style.top = '40%'
+                flexTwo.style.top = '40%';
+
+                numberOne.style.transform = 'scale(0)';
+                numberTwo.style.transform = 'scale(0)';
+                numberThree.style.transform = 'scale(0)';
+                setTimeout(function() {
+                    numberOne.style.animationName = 'zoom-in';
+                numberOne.style.transform = 'scale(1)';
+                },1000);
+
+                setTimeout(function() {
+                numberTwo.style.animationName = 'zoom-in';
+                numberTwo.style.transform = 'scale(1)';
+                },1800);
+
+                setTimeout(function() {
+                numberThree.style.animationName = 'rotate-in';
+                numberThree.style.transform = 'scale(1)';
+                },3000);
+            } else {
+                error.style.display = 'block';
             }
         }
 

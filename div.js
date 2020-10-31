@@ -263,8 +263,6 @@ if (mql.matches) {
     });
 }
 
-randomBgColor();
-
 
 let resetBtn = document.getElementById("resetButton");
 resetBtn.addEventListener("click", function() {
@@ -286,3 +284,5 @@ body.addEventListener("input", function() {
 setInterval(function() {
     divFunction();
 }, 10)
+
+randomBgColor();
