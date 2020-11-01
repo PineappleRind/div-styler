@@ -18,7 +18,7 @@
             animation: adjustBg 100s infinite linear
         }
 
-        button {
+        .go-back {
             border:0px solid rgb(0, 0, 0);
     background:none;
     color:rgb(0, 0, 0);
@@ -29,17 +29,17 @@
     font-size:15px;
         }
 
-        button .fa-arrow-left {
+        .go-back .fa-arrow-left {
     padding:10px;
     transition:0.5s;
 }
 
-button:hover {
+.go-back:hover {
      letter-spacing:0.7px;
      color:rgb(0, 66, 88);
 }
 
-button:hover .fa-arrow-left {
+.go-back:hover .fa-arrow-left {
     transform:translate(-3px,0px) scale(1.1);
     color:rgb(0, 28, 105);
 }
@@ -118,6 +118,23 @@ button:hover .fa-arrow-left {
             animation-duration:1s;
         }
 
+        #confirmWindow {
+            position:fixed;
+        z-index:10;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        display:none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color:white;
+        background-color:rgba(0, 0, 0, 0.726);
+        opacity:0;
+        transition:0.5s;
+        }
+
         @keyframes go-down {
             from {opacity:1;}
             to {opacity:0; top:100%;}
@@ -141,14 +158,26 @@ button:hover .fa-arrow-left {
         @keyframes rotate-in {
             from {transform:scale(0) rotateZ(-60deg)};
         }
+
+        @-webkit-keyframes zoom-in {
+            from {transform:scale(0)};
+        }
+
+        @-webkit-keyframes rotate-in {
+            from {transform:scale(0) rotateZ(-60deg)};
+        }
     </style>
 </head>
 <body>
     <div class="flex one">
         <div class="container" id="flexOne">
             <h1>Sorry! This webpage is no longer available.</h1>
-            <button><i class="fas fa-arrow-left"></i>Back home</button>
+            <button class="go-back"><i class="fas fa-arrow-left"></i>Back home</button>
         </div>
+    </div>
+    <div id="confirmWindow">
+        <p>you really want to see this, don't you?</p>
+        <button onclick="show();">Yes</button>
     </div>
     <div class="flex two">
         <div class="container" id="flexTwo">
@@ -166,20 +195,30 @@ button:hover .fa-arrow-left {
     </div>
     </div>
     <script>
-        let author = 'pineapplerind';
-        let pass = 'pineapplerind';
 
-        let input = document.getElementById('password');
-        function password() {
+let confirm = document.getElementById('confirmWindow');
+document.body.style.overflow = "hidden";
+window.addEventListener("keydown", function(e) {
+  if (e.key === 'n' || e.key === 'N') {
+    window.addEventListener("keydown", function(e) {
+      if (e.key === 'o' || e.key === 'O') {
+          confirm.style.opacity = '1';
+          confirm.style.display = 'flex';
+      }
+    })
+  }
+  });
 
-            let flexOne = document.getElementById('flexOne');
+  function show() {
+    let flexOne = document.getElementById('flexOne');
             let flexTwo = document.getElementById('flexTwo');
             let numberOne = document.getElementById('numberOne');
             let numberTwo = document.getElementById('numberTwo');
             let numberThree = document.getElementById('numberThree');
 
-            if (input.value === pass) {
                 flexOne.style.animationName = 'go-down';
+                confirm.style.opacity = '0';
+          
 
                 setTimeout(function(){
                     flexOne.style.display = 'none';
@@ -195,6 +234,7 @@ button:hover .fa-arrow-left {
                 setTimeout(function() {
                     numberOne.style.animationName = 'zoom-in';
                 numberOne.style.transform = 'scale(1)';
+                confirm.style.display = 'none';
                 },1000);
 
                 setTimeout(function() {
@@ -206,15 +246,8 @@ button:hover .fa-arrow-left {
                 numberThree.style.animationName = 'rotate-in';
                 numberThree.style.transform = 'scale(1)';
                 },3000);
-            } else {
-                error.style.display = 'block';
-            }
-        }
-
-        document.addEventListener("input", function(){
-            password();
-        });
+  }
+    
     </script>
-    <script>    </script>
 </body>
 </html>
