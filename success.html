@@ -7,11 +7,91 @@
     <meta name="author" content="PineappleRind">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Div styler</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Grandstander&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;800;900&family=Grandstander&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <script src="https://kit.fontawesome.com/66d1518bf8.js" crossorigin="anonymous"></script>
+    <style>
+
+        body {
+            background-color:rgb(180, 214, 243);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            font-family:Inter, sans-serif;
+            font-weight:300;
+        }
+                .go-back {
+            border:0px solid rgb(0, 0, 0);
+    background:none;
+    color:rgb(0, 0, 0);
+    border-bottom:1px solid rgb(0, 0, 0);
+    transition:0.2s ease;
+    margin:2px;
+    padding:2px;
+    font-size:15px;
+        }
+
+        div {
+            background-color:white;
+            border-radius:20px;
+            width:400px;
+            text-align:center;
+            padding:20px;
+            height:220px;
+            font-family:Inter, sans-serif;
+            font-weight:300;
+            box-shadow: 0 0 50px 30px rgba(0,0,0,0.2);
+            position:fixed;
+            z-index:2;
+            top:calc(50% - 220px);
+        }
+
+        .go-back .fa-arrow-left {
+    padding:10px;
+    transition:0.5s;
+}
+
+.go-back:hover {
+     letter-spacing:0.7px;
+     color:rgb(0, 66, 88);
+}
+
+.go-back:hover .fa-arrow-left {
+    transform:translate(-3px,0px) scale(1.1);
+    color:rgb(0, 28, 105);
+}
+
+h1 {
+    font-size: 62px;
+  background: -webkit-linear-gradient(90deg, rgb(58, 55, 255), rgb(212, 0, 255), rgb(255, 102, 0),rgb(102, 255, 0));
+  background-size:300%;
+  background-position:0% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight:900;
+  animation:h1bg 10s linear infinite;
+  margin:20px;
+}
+
+h2 {
+    margin:2px;
+    margin-bottom:10px;
+}
+
+@keyframes h1bg {
+    0% {background-position: 0% 100%;}
+    50% {background-position:100% 0%;}
+    100% {background-position: 0% 100%;}
+}
+    </style>
 </head>
 <body>
-    
+    <div>
+        <h1>Thanks!</h1>
+        <h2 style="font-weight: 300;">Your form was submitted successfully.</h2>
+        <a href="https://div-styler.netlify.app" class="go-back"><i class="fa fa-arrow-left"></i>Go back</a>
+    </div>
 </body>
 </html>
