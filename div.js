@@ -238,6 +238,7 @@ function getRandomColor() {
       setTimeout(function() {
           divCode.style.display = 'none';
           divCode.style.animationName = '';
+          fontCode.style.animationName = '';
       }, 500);
   }
 
@@ -255,27 +256,46 @@ function mobileOpen() {
     }
 }
 
-if (mql.matches) {
-    openButton.addEventListener("click", function() {
-        mobileOpen();
-    })
-
-    function changeOpacity() {
-        adjustContainer.style.opacity = 0.6;
-        setTimeout(function() {
-            adjustContainer.style.opacity = 1;
-        }, 1000);
+    if (mql.matches) {
+        openButton.addEventListener("click", function() {
+            mobileOpen();
+        })
+    
+        function changeOpacity() {
+            adjustContainer.style.opacity = 0.6;
+            setTimeout(function() {
+                adjustContainer.style.opacity = 1;
+            }, 1000);
+        }
+    
+        body.addEventListener("input", function() {
+            changeOpacity();
+        });
+        let randomBtn = document.getElementById("random");
+        randomBtn.addEventListener("click", function() {
+            changeOpacity();
+        });
     }
 
-    body.addEventListener("input", function() {
-        changeOpacity();
-    });
-    let randomBtn = document.getElementById("random");
-    randomBtn.addEventListener("click", function() {
-        changeOpacity();
-    });
+function contactMe() {
+    let overlay = document.getElementById('flexOverlay');
+    let modal = document.getElementById('contactModal');
+    if (overlay.style.opacity !== '1') {
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '1';
+        modal.style.animationName = 'float-in';
+    } else {
+        overlay.style.opacity = '0';
+        setTimeout(function() {
+            overlay.style.display = 'none';
+        }, 1000);
+    }
 }
 
+let modalTrig = document.getElementById('modalTrigger');
+modalTrig.addEventListener("click", function() {
+    contactMe();
+});
 
 let resetBtn = document.getElementById("resetButton");
 resetBtn.addEventListener("click", function() {
