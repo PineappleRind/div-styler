@@ -215,17 +215,30 @@ function getRandomColor() {
   let fontButton = document.getElementById('fontCodeButton');
 
   function switchToDiv() {
-      divCode.style.display = 'block';
+        divCode.style.display = 'block';
       divButton.style.backgroundColor = 'rgb(91, 106, 243)';
       fontButton.style.backgroundColor = '';
-      fontCode.style.display = 'none';
+      fontCode.style.animationName = 'switch-back-from-right';
+      divCode.style.animationName = 'switch-back-from-left';
+      setTimeout(function() {
+          fontCode.style.display = 'none';
+          fontCode.style.animationName = '';
+          divCode.style.animationName = '';
+      }, 500);
   }
 
   function switchToFont() {
-      divCode.style.display = 'none';
       fontCode.style.display = 'block';
       divButton.style.backgroundColor = '';
       fontButton.style.backgroundColor = 'rgb(91, 106, 243)';
+      divCode.style.display = 'block';
+
+      divCode.style.animationName = 'switch-from-left';
+      fontCode.style.animationName = 'switch';
+      setTimeout(function() {
+          divCode.style.display = 'none';
+          divCode.style.animationName = '';
+      }, 500);
   }
 
 let openButton = document.getElementById("mobileOpenControls");

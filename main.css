@@ -118,6 +118,8 @@
             cursor:text;
             transition:1s cubic-bezier(.60,0,.40,1);
             height:300px;
+            animation-duration:0.5s;
+            min-width:400px;
     } 
 
     .code h1 {
@@ -153,6 +155,7 @@
         float:left;
         border:none;
         border-right:2px solid rgb(73, 73, 73);
+        transition:0.5s;
     }
 
     .foot {
@@ -184,10 +187,12 @@
         text-decoration:none;
         text-shadow:0 0 10px rgba(195, 0, 255, 0.548);;
     }
-    pre, span {
+    pre {
         font-family: Courier, monospace;
         cursor:text;
         margin-top:0;
+        animation-duration:0.5s;
+        position:absolute;
     }
 
 
@@ -275,6 +280,22 @@
             background-color:white;
             height:1px;
             border-radius:3px;
+        }
+
+        @keyframes switch {
+            from {transform:translateX(500px)};
+        }
+
+        @keyframes switch-back-from-right {
+            to {transform:translateX(500px)};
+        }
+
+        @keyframes switch-back-from-left {
+            from {transform:translateX(-500px)};
+        }
+
+        @keyframes switch-from-left {
+            to {transform:translateX(-500px)};
         }
 
 
