@@ -217,17 +217,15 @@
         animation-duration:1s;
     }
 
-    #contactFormClose {
-        position:absolute;
-        right:10px;
-        top:10px;
-        font-size:30px;
-        font-weight:900;
-    }
-
-    .contact-form input {
+    .contact-form input[type="text"] {
         display:block;
         width:300px;
+    }
+
+    .contact-form input[type="reset"], .contact-form input[type="submit"], .contact-form a {
+        border: 2px solid grey;
+         background-color:#ccc;
+         padding:5px;
     }
 
     pre {
