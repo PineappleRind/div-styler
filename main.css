@@ -8,7 +8,7 @@ body {
 }
 
 body.no-bg {
-	background-color: white;
+	background-color: transparent;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -39,6 +39,7 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
 	-webkit-appearance: none;
 	appearance: none;
+	-moz-appearance:none;
 	width: 17px;
 	height: 17px;
 	background: #4CAF50;
@@ -49,7 +50,7 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="range"] {
 	-webkit-appearance: none;
-	/* Override default CSS styles */
+	-moz-appearance:none;
 	appearance: none;
 	width: 80%;
 	opacity: 0.8;
@@ -60,11 +61,11 @@ input[type="range"] {
 
 input[type="range"]:hover {
 	opacity: 1;
-	border-radius: 0px;
+	border-radius: 2px;
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-	border-radius: 0px;
+	border-radius: 2px;
 }
 
 .adjust-container {
@@ -78,7 +79,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
 	padding-bottom: 120px;
 	width: 200px;
 	overflow-y: scroll;
-	background-color: rgb(198, 192, 231);
+	background-color: rgb(171, 165, 203);
 	box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.267), inset 19px 18px 41px 0px #8f89a8;
 	bottom: 0;
 	z-index: 6;
@@ -227,11 +228,13 @@ input[type="range"]:hover::-webkit-slider-thumb {
 .contact-form input[type="reset"],
 .contact-form input[type="submit"],
 .contact-form a {
-	border: 2px solid grey;
-	background-color: #ccc;
+	border: 2px solid rgb(255, 40, 40);
+	background-color: rgb(255, 67, 67);
+	color:white;
 	padding: 5px;
 	font-size: 15px;
 	cursor: pointer;
+	border-radius:2px;
 }
 
 pre {

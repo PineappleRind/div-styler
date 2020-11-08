@@ -26,7 +26,17 @@ function getRandomWord() {
   'dozen','into','a',
   'bug','mouth','cherry',
   'tree','document','hiccup',
-  'girl'];
+  'girl','chosen','sphinx',
+  'fire','robot', 'lemon',
+  'sugar','tea','graveyard',
+  'video','shop','honey',
+  'apple','all','who',
+  'materials','resize','job',
+  'agreed', 'demand','woman',,
+  'falls','tool','problems',
+  'position','absolute','task',
+  'superiors','done','insidious',
+  'cup','there','integrations'];
   var word = '';
     word += words[Math.floor(Math.random() * words.length)];
   return word;
