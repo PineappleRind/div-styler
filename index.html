@@ -1,125 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Free div styler/shape maker with CSS code.">
-    <meta name="keywords" content="CSS, DIV, div styler, shape maker">
-    <meta name="author" content="PineappleRind">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Div styler</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Grandstander&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-</head>
-<body id="body">
-    <div class="main" id="main">
-        <button id="mobileOpenControls">Show controls</button>
-        <div class="adjust-container" id="adjustContainer">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="description" content="Free div styler/shape maker with CSS code.">
+      <meta name="keywords" content="CSS, DIV, div styler, shape maker">
+      <meta name="author" content="PineappleRind">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Div styler</title>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Grandstander&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="main.css">
+      <link rel="shortcut icon" type="image/png" href="favicon.png" />
+   </head>
+   <body id="body">
+      <div class="main" id="main">
+         <button id="mobileOpenControls">Show controls</button>
+         <div class="adjust-container" id="adjustContainer">
             <div>
-            <h1>Basic</h1>
-            <p>Height</p>
-            <input type="range" id="height"><br>
-            <p>Width</p>
-            <input type="range" id="width"><br>
-            <p>Rotate</p>
-            <input type="range" value="0" id="rotate">
-            <p>Skew</p>
-            <input type="range" value="50" id="skew">
-            <p>Color</p>
-            <input type="color" value="#ff7f50" id="color"><br>
-            <p>Roundness</p>
-            <input type="range" id="borderRadius">
-            <p>Opacity</p>
-            <input type="range" value="100" id="opacity">
-            <br><br><hr>
-            <h1>Border</h1>
-            <p>Color</p>
-            <input type="color" id="borderColor"><br>
-            <p>Thickness</p>
-            <input type="range" value="10" id="borderThickness">
-            <p>Style</p>
-            <input type="radio" id="borderSolid" name="borderStyle">
-            <label for="borderSolid">Solid</label><br>
-            <input type="radio" id="borderDashed" name="borderStyle"></input>
-            <label for="borderDashed">Dashed</label><br>
-            <input type="radio" id="borderDotted" name="borderStyle">
-            <label for="borderDotted">Dotted</label><br>
-            <input type="radio" id="borderDouble" name="borderStyle">
-            <label for="borderDouble">Double</label><br>
-            <br><br><hr>
-            <h1>Content</h1>
-            <textarea maxlength="50" id="divContent" onkeyup="updateContent();" onkeydown="updateContent();" onkeypress="updateContent();""></textarea>
-            <p>Font size</p>
-            <input type="range" id="fontSize">
-            <p>Font color</p>
-            <input type="color" id="fontColor">
-            <hr>
-            <input id="fontShadowEnable" type="checkbox" style="height:20px;width:20px;"><label for="fontShadowEnable" style="font-size:20px;">Font shadow</h2>
-            <p>X coordinates</p>
-            <input type="range" id="fontShadowX">
-            <p>Y coordinates</p>
-            <input type="range" id="fontShadowY">
-            <p>Blur radius</p>
-            <input value="0" type="range" id="fontShadowBlur">
-            <p>Shadow color</p>
-            <input type="color" id="fontShadowColor">
-            <p>Font family <a href="https://div-styler.netlify.app/fonts.html" class="help">(See all compatible fonts)</a></p>
-            <textarea limit="29" id="fontFamilyCustom" placeholder="Type font here..."></textarea>
-            <p id="fontFamilyCustomError" style="font-weight:700; font-size:15px; margin:0; color:red; display:none;">Error: Font not found</p>
-            <br><br><hr>
-            <p>Background color</p>
-            <input type="color" id="bodyBgColor"><br><br><br>
-            <button id="resetButton">Reset</button>
-            <button id="random">Random</button><br>
-            <input type="checkbox" id="randomWord">
-            <label for="randomWord">Also random word</label>
-            <br>
-            <input type="checkbox" id="randomContent">
-            <label for="randomContent">Also random content</label>
-            <p id="randomErrorMessage" style="font-weight:700; font-size:15px; margin:0; color:red; display:none;">Error: Please check only one</p>
-                <br><br><br>
-        </div>
-        </div>
-        <div id="div" style="font-family: Arial, Helvetica, sans-serif;"></div>
-        <div id="cssCode" class="code">
-            <p onclick="minCSSCode()" id="minCode">&darr;</p>
-            <p onclick="hideCSSCode()" id="closeCode">&times;</p>
+               <h1>Basic</h1>
+               <p>Height</p>
+               <input type="range" id="height"><br>
+               <p>Width</p>
+               <input type="range" id="width"><br>
+               <p>Rotate</p>
+               <input type="range" value="0" id="rotate">
+               <p>Skew</p>
+               <input type="range" value="50" id="skew">
+               <p>Color</p>
+               <input type="color" value="#ff7f50" id="color"><br>
+               <p>Roundness</p>
+               <input type="range" id="borderRadius">
+               <p>Opacity</p>
+               <input type="range" value="100" id="opacity"> <br><br>
+               <hr>
+               <h1>Shadow</h1>
+               <p>X coordinates</p>
+               <input type="range" id="boxShadowX">
+               <p>Y coordinates</p>
+               <input type="range" id="boxShadowY">
+               <p>Blur radius</p>
+               <input type="range" id="boxShadowBlur">
+               <p>Color</p>
+               <input type="color" id="boxShadowColor"> <br><br>
+               <hr>
+               <h1>Border</h1>
+               <p>Color</p>
+               <input type="color" id="borderColor"><br>
+               <p>Thickness</p>
+               <input type="range" value="10" id="borderThickness">
+               <p>Style</p>
+               <input type="radio" id="borderSolid" name="borderStyle"> <label for="borderSolid">Solid</label><br> <input type="radio" id="borderDashed" name="borderStyle"></input> <label for="borderDashed">Dashed</label><br> <input type="radio" id="borderDotted" name="borderStyle"> <label for="borderDotted">Dotted</label><br> <input type="radio" id="borderDouble" name="borderStyle"> <label for="borderDouble">Double</label><br> <br><br>
+               <hr>
+               <h1>Content</h1>
+               <textarea maxlength="50" id="divContent" onkeyup="updateContent();" onkeydown="updateContent();" onkeypress="updateContent();" "></textarea>
+               <p>Font size</p>
+               <input type="range" id="fontSize">
+               <p>Font color</p>
+               <input type="color" id="fontColor">
+               <hr>
+               <input id="fontShadowEnable" type="checkbox" style="height:20px;width:20px;"> 
+               <label for="fontShadowEnable" style="font-size:20px;">
+                  Font shadow</h2>
+                  <p>X coordinates</p>
+                  <input type="range" id="fontShadowX">
+                  <p>Y coordinates</p>
+                  <input type="range" id="fontShadowY">
+                  <p>Blur radius</p>
+                  <input value="0" type="range" id="fontShadowBlur">
+                  <p>Shadow color</p>
+                  <input type="color" id="fontShadowColor">
+                  <p>Font family <a href="https://div-styler.netlify.app/fonts.html" class="help">(See all compatible fonts)</a></p>
+                  <textarea limit="29 " id="fontFamilyCustom" placeholder="Type font here... "></textarea>
+                  <p id="fontFamilyCustomError" style="font-weight:700; font-size:15px; margin:0; color:red; display:none; ">Error: Font not found</p>
+                  <br><br>
+                  <hr>
+                  <p>Background color</p>
+                  <input type="color" id="bodyBgColor"><br><br><br> <button id="resetButton">Reset</button> <button id="random">Random</button><br> <input type="checkbox" id="randomWord"> 
+               <label for="randomWord">Also random word</label> <br> <input type="checkbox" id="randomContent"> <label for="randomContent">Also random content</label>
+               <p id="randomErrorMessage" style="font-weight:700; font-size:15px; margin:0; color:red; display:none; ">Error: Please check only one</p>
+               <br><br><br>
+            </div>
+         </div>
+         <div id="div" style="font-family: Arial, Helvetica, sans-serif;"></div>
+         <div id="cssCode" class="code">
+            <p onclick="minCSSCode()" id="minCode">↓</p>
+            <p onclick="hideCSSCode()" id="closeCode">×</p>
             <h1>CSS Code</h1>
-            <button onclick="switchToDiv()" style="background-color: rgb(91, 106, 243);" id="divCodeButton">Div</button><button onclick="switchToFont();" style="border-right:none;" id="fontCodeButton">Font</button><br>
-            <pre id="divCode">
-    height: <span id="heightCode">250px</span>;
-    width: <span id="widthCode">250px</span>;
-    background-color: <span id="bgColorCode">#ff7f50</span>;
-    border: <span id="borderThicknessCode">3px</span> <span id="borderStyleCode">solid</span> <span id="borderColorCode">#000000</span>;
-    border-radius: <span id="borderRadiusCode">100px</span>;
-    transform: rotateZ(<span id="rotateCode">0deg</span>) skewX(<span id="skewCode">0deg</span>); </pre>
-            <pre id="fontCode" style="display:none;">
-    font-family: <span id="fontFamilyCode">Arial, Helvetica, sans-serif</span>;
-    text-shadow: <span id="textShadowXCode">0px</span><span id="textShadowYCode">0px</span><span id="textShadowBlurCode">0px</span><span id="textShadowColorCode">#000000</span>;
-    font-size: <span id="fontSizeCode">45px</span>; 
-            </pre>
-        </div>
-    </div>
-<div class="flex-overlay" id="flexOverlay" style="transition: 1s; display: none; opacity: 0;">
-    <div class="contact-form-modal" id="contactModal">
-        <form name="contact" class="contact-form" action="/success.html" netlify>
-            <h1>Contact Me</h1>
-            <input type="text" class="contactMeInput" name="contact info" placeholder="E-mail, discord, fb link or anything">
-            <input style="height: 100px;" class="contactMeInput" name="text" type="text" placeholder="Write something...">
-            <a onclick="contactMe();">Close</a>
-            <input type="reset">
-            <input type="submit">
-        </form>
-    </div>
-</div>
-    <!-- Go to https://div-styler.netlify.app/Beech ;)-->
-    <div class="foot">
-        <div>
-        <a href="http://div-styler.netlify.app/website-redirect" style="display:block;">made by PineappleRind</a>
-        <a id="modalTrigger">contact me</a>
-    </div>
-    </div>
-    <script src="div.js"></script>
-    <script src="random.js"></script> 
-</body>
+            <button onclick="switchToDiv()" style="background-color: rgb(91, 106, 243); " id="divCodeButton">Div</button><button onclick="switchToFont(); " style="border-right:none;" id="fontCodeButton">Font</button><br>
+            <pre id="divCode">height: <span id="heightCode">250px</span>;<br>width: <span id="widthCode">250px</span>; <br>background-color: <span id="bgColorCode">#ff7f50</span>; <br>border: <span id="borderThicknessCode">3px</span> <span id="borderStyleCode">solid</span> <span id="borderColorCode">#000000</span>; <br>border-radius: <span id="borderRadiusCode">100px</span>; <br>transform: rotateZ(<span id="rotateCode">0deg</span>) <br>skewX(<span id="skewCode">0deg</span>); </pre>
+            <pre id="fontCode" style="display:none;">font-family: <span id="fontFamilyCode">Arial, Helvetica, sans-serif</span>; <br>text-shadow: <span id="textShadowXCode">0px</span><span id="textShadowYCode">0px</span><span id="textShadowBlurCode">0px</span><span id="textShadowColorCode">#000000</span>; <br>font-size: <span id="fontSizeCode">45px</span>; </pre>
+         </div>
+      </div>
+      <div class="flex-overlay" id="flexOverlay " style="transition: 1s; display: none; opacity: 0; ">
+         <div class="contact-form-modal" id="contactModal">
+            <form name="contact" class="contact-form " action="/success.html" netlify>
+               <h1>Contact Me</h1>
+               <input type="text" class="contactMeInput" name="contact info" placeholder="E-mail, discord, fb link or anything"> <input style="height: 100px;" class="contactMeInput" name="text" type="text" placeholder="Write something... "> <a onclick="contactMe();">Close</a> <input type="reset"> <input type="submit">
+            </form>
+         </div>
+      </div>
+      <div class="foot">
+         <div> <a href="http://div-styler.netlify.app/website-redirect " style="display:block; ">made by PineappleRind</a> <a id="modalTrigger">contact me</a></div>
+      </div>
+      <script src="div.js "></script> <script src="random.js "></script> 
+   </body>
 </html>
