@@ -220,10 +220,17 @@ input[type="range"]:hover::-webkit-slider-thumb {
 	animation-duration: 1s;
 }
 
+
 .contact-form input[type="text"] {
 	display: block;
 	width: 300px;
 }
+
+.visible {
+	opacity:1;
+	display: flex;
+}
+
 
 .contact-form input[type="reset"],
 .contact-form input[type="submit"],
@@ -235,6 +242,15 @@ input[type="range"]:hover::-webkit-slider-thumb {
 	font-size: 15px;
 	cursor: pointer;
 	border-radius:2px;
+}
+
+.contact-form input[type="reset"] {
+	border: 2px solid rgb(95, 95, 95);
+	background-color: rgb(146, 146, 146);
+}
+.contact-form input[type="submit"] {
+	border: 2px solid rgb(0, 150, 32);
+	background-color: rgb(62, 196, 0);
 }
 
 pre {
