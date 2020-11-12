@@ -7,24 +7,34 @@ function divFunction() {
     let divRotate = document.getElementById("rotate");
     let divSkew = document.getElementById('skew');
     let divOpacity = document.getElementById('opacity');
+
     let divShadowX = document.getElementById("boxShadowX");
     let divShadowY = document.getElementById("boxShadowY");
     let divShadowBlur = document.getElementById("boxShadowBlur");
     let divShadowColor = document.getElementById("boxShadowColor");
+
+    let px = 'px ';
+
+    let yy = divShadowY.value - 50 + px;
+    let xx = divShadowX.value - 50 + px;
+    let bb = divShadowBlur.value/1.5 + px;
+    let cc = divShadowColor.value;
 
     let divBorderThickness = document.getElementById("borderThickness");
     let divBorderColor = document.getElementById("borderColor");
 
     let div = document.getElementById("div");
 
-    div.style.height = divHeight.value * 5 + "px";
-    div.style.width = divWidth.value * 5 + "px";
-    div.style.borderRadius = divBorderRadius.value * 2 + "px";
-    div.style.borderWidth = divBorderThickness.value / 4 + "px";
+    div.style.height = divHeight.value * 5 + px;
+    div.style.width = divWidth.value * 5 + px;
+    div.style.borderRadius = divBorderRadius.value * 2 + px;
+    div.style.borderWidth = divBorderThickness.value / 4 + px;
     div.style.backgroundColor = divBgColor.value;
     div.style.borderColor = divBorderColor.value;
     div.style.transform = 'rotateZ(' + Math.ceil(divRotate.value * 3.6) + "deg) " + 'skewX(' + Math.floor((divSkew.value / 5) - 10) + 'deg';
     div.style.opacity = divOpacity.value / 100;
+
+    div.style.boxShadow = xx + yy + bb + cc;
 
     if (divBorderRadius.value === 100) {
         div.style.borderRadius = '50%';
@@ -247,6 +257,48 @@ function switchToFont() {
     }, 500);
 }
 
+function main() {
+    
+    let yy = y.value - 50 + px;
+    let xx = x.value - 50 + px;
+    let bb = b.value/1.5 + px;
+    let cc = c.value;
+
+    r.style.boxShadow = xx + yy + bb + cc;
+}
+
+function showCode() {
+    let o = document.getElementById('overlay');
+    o.style.display = 'flex';
+    o.style.opacity = '1';
+    o.style.width = '100%';
+}
+
+function hideCode() {
+    let o = document.getElementById('overlay');
+    o.style.opacity = '0';
+    o.style.width = '0%';
+}
+
+function updateCode() {
+    let y = document.getElementById('yCoords');
+    let x = document.getElementById('xCoords');
+    let b = document.getElementById('blur');
+    let c = document.getElementById('color');
+
+    let yC = document.getElementById('ycode');
+    let xC = document.getElementById('xcode');
+    let bC = document.getElementById('blurcode');
+    let cC = document.getElementById('colorcode');
+
+    let px = 'px ';
+
+    yC.innerHTML = Math.ceil(y.value - 50) + px;
+    xC.innerHTML = Math.ceil(x.value - 50) + px;
+    bC.innerHTML = Math.ceil(b.value/1.5) + px;
+    cC.innerHTML = c.value;
+}
+
 let openButton = document.getElementById("mobileOpenControls");
 let adjustContainer = document.getElementById('adjustContainer');
 let mql = window.matchMedia('(max-width: 700px)');
@@ -316,9 +368,10 @@ inputColor.addEventListener("input", function() {
     changeBgColor();
 });
 
-body.addEventListener("input", function() {
+oninput = e => {
     changeBorderStyle();
-});
+}
+
 setInterval(function() {
     divFunction();
 }, 10)
